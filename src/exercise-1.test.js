@@ -15,6 +15,17 @@ describe("addNumbers", () => {
   it("should add numbers (100, -1000) correctly", () => {
     expect(addNumbers(100, -1000)).toBe(-900);
   });
+  it("should add numbers (5.5, 5.555) correctly", () => {
+    expect(addNumbers(5.5, 5.555)).toBeCloseTo(11.055);
+  });
+  it("should add numbers (1/3, -1/3) correctly", () => {
+    expect(addNumbers(1 / 3, -1 / 3)).toBeCloseTo(0);
+  });
+  it("should add numbers (Number.MAX_VALUE, Number.MIN_VALUE) correctly", () => {
+    expect(addNumbers(Number.MAX_VALUE, Number.MIN_VALUE)).toBeCloseTo(
+      1.7976931348623157e308
+    );
+  });
 });
 
 describe("subtractNumbers", () => {
