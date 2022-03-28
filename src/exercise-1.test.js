@@ -84,4 +84,15 @@ describe("divideNumbers", () => {
   it("should divide numbers (4, 5) correctly", () => {
     expect(divideNumbers(4, 5)).toBeCloseTo(0.8);
   });
+  it("should divide numbers (5.5, 5.555) correctly", () => {
+    expect(divideNumbers(5.5, 5.555)).toBeCloseTo(100 / 101);
+  });
+  it("should divide numbers (1/3, -1/3) correctly", () => {
+    expect(divideNumbers(1 / 3, -1 / 3)).toBeCloseTo(-1);
+  });
+  it("should divide numbers (Number.MAX_VALUE, Number.MIN_VALUE) correctly", () => {
+    expect(divideNumbers(Number.MAX_VALUE, Number.MIN_VALUE)).toBeCloseTo(
+      Infinity
+    );
+  });
 });
