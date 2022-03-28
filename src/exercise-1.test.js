@@ -61,6 +61,17 @@ describe("multiplyNumbers", () => {
   it("should multiply numbers (-100, -1000) correctly", () => {
     expect(multiplyNumbers(-100, -1000)).toBe(100000);
   });
+  it("should multiply numbers (5.5, 5.555) correctly", () => {
+    expect(multiplyNumbers(5.5, 5.555)).toBeCloseTo(30.5525);
+  });
+  it("should multiply numbers (1/3, -1/3) correctly", () => {
+    expect(multiplyNumbers(1 / 3, -1 / 3)).toBeCloseTo(-1 / 9);
+  });
+  it("should multiply numbers (Number.MAX_VALUE, Number.MIN_VALUE) correctly", () => {
+    expect(multiplyNumbers(Number.MAX_VALUE, Number.MIN_VALUE)).toBeCloseTo(
+      8.881784197001251e-16
+    );
+  });
 });
 
 describe("divideNumbers", () => {
