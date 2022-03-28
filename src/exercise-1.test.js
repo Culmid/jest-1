@@ -26,6 +26,21 @@ describe("addNumbers", () => {
       1.7976931348623157e308
     );
   });
+  it("should handle single parameter", () => {
+    expect(() => addNumbers(0)).toThrow(
+      Error("addNumbers: More Arguments Necessary")
+    );
+  });
+  it("should handle too many parameters", () => {
+    expect(() => addNumbers(1, 2, 3)).toThrow(
+      Error("addNumbers: Too Many Arguments")
+    );
+  });
+  it("should handle no parameters", () => {
+    expect(() => addNumbers()).toThrow(
+      Error("addNumbers: More Arguments Necessary")
+    );
+  });
 });
 
 describe("subtractNumbers", () => {
@@ -47,6 +62,21 @@ describe("subtractNumbers", () => {
   it("should subtract numbers (Number.MAX_VALUE, Number.MIN_VALUE) correctly", () => {
     expect(subtractNumbers(Number.MAX_VALUE, Number.MIN_VALUE)).toBeCloseTo(
       1.7976931348623157e308
+    );
+  });
+  it("should handle single parameter", () => {
+    expect(() => subtractNumbers(0)).toThrow(
+      Error("subtractNumbers: More Arguments Necessary")
+    );
+  });
+  it("should handle too many parameters", () => {
+    expect(() => subtractNumbers(1, 2, 3)).toThrow(
+      Error("subtractNumbers: Too Many Arguments")
+    );
+  });
+  it("should handle no parameters", () => {
+    expect(() => subtractNumbers()).toThrow(
+      Error("subtractNumbers: More Arguments Necessary")
     );
   });
 });
@@ -72,6 +102,21 @@ describe("multiplyNumbers", () => {
       8.881784197001251e-16
     );
   });
+  it("should handle single parameter", () => {
+    expect(() => multiplyNumbers(0)).toThrow(
+      Error("multiplyNumbers: More Arguments Necessary")
+    );
+  });
+  it("should handle too many parameters", () => {
+    expect(() => multiplyNumbers(1, 2, 3)).toThrow(
+      Error("multiplyNumbers: Too Many Arguments")
+    );
+  });
+  it("should handle no parameters", () => {
+    expect(() => multiplyNumbers()).toThrow(
+      Error("multiplyNumbers: More Arguments Necessary")
+    );
+  });
 });
 
 describe("divideNumbers", () => {
@@ -93,6 +138,24 @@ describe("divideNumbers", () => {
   it("should divide numbers (Number.MAX_VALUE, Number.MIN_VALUE) correctly", () => {
     expect(divideNumbers(Number.MAX_VALUE, Number.MIN_VALUE)).toBeCloseTo(
       Infinity
+    );
+  });
+  it("should handle division by zero", () => {
+    expect(divideNumbers(10, 0)).toBe(Infinity);
+  });
+  it("should handle single parameter", () => {
+    expect(() => divideNumbers(0)).toThrow(
+      Error("divideNumbers: More Arguments Necessary")
+    );
+  });
+  it("should handle too many parameters", () => {
+    expect(() => divideNumbers(1, 2, 3)).toThrow(
+      Error("divideNumbers: Too Many Arguments")
+    );
+  });
+  it("should handle no parameters", () => {
+    expect(() => divideNumbers()).toThrow(
+      Error("divideNumbers: More Arguments Necessary")
     );
   });
 });
