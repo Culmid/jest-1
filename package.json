@@ -7,17 +7,15 @@
     "test": "jest",
     "test-watch": "jest --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yoco-grad-programme/jest.git"
-  },
+  "repository": "git+https://github.com/yoco-grad-programme/jest.git",
   "keywords": [],
-  "author": "",
+  "author": "Cullen Middleton <cullen.middleton@yoco.com>",
   "bugs": {
     "url": "https://github.com/yoco-grad-programme/jest/issues"
   },
   "homepage": "https://github.com/yoco-grad-programme/jest#readme",
   "dependencies": {
     "jest": "^27.5.1"
-  }
+  },
+  "license": "MIT"
 }
